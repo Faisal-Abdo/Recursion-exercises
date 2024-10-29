@@ -4,7 +4,7 @@ import java.util.List;
 
 public class TwoEqualSumGroups {
     public static void main(String[] args) {
-        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(2, 3,5));
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1, 4, 3));
         System.out.println(splitArray(numbers));
     }
 
@@ -28,9 +28,12 @@ public class TwoEqualSumGroups {
         if (isTarget == 0) {
             return true;
         }
-        if (isTarget != 0) {
-            return helper(integerArray, isTarget, index + 1);
+        if (isTarget < 0) {
+            return false;
         }
-        return helper(integerArray, target, index+1);
+        if (helper(integerArray, isTarget, index + 1)) {
+            return true;
+        }
+        return helper(integerArray, target, index + 1);
     }
 }
