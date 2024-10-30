@@ -13,7 +13,7 @@ public class IdenticalValuesClump {
         }
         Integer currentElement = nums.get(start);
         Integer sumOfNumbers = 0;
-        Integer count = 0;
+        Integer count = 0;    //this count is for counting adjacent clumps
         while (start + count < nums.size() && nums.get(start + count) == currentElement) {
             sumOfNumbers += currentElement;
             count++;
